@@ -2,7 +2,9 @@
 
 # global vairiabels
 USAGE="Usage: ./password_validator <your_password>"
-
+red_color=`tput setaf 1`
+green_color=`tput setaf 2`
+reset_color=`tput sgr0`
 
 # The validator function get the password  and validate:
 # minimum 10 chars, lowercase and uppercase letters.
@@ -12,6 +14,12 @@ function password_validator(){
 	else
 		echo "invalid_password_respond"
 	fi
+}
+
+# valid resppond
+function valid_password_respond(){
+	echo "${green_color}valid password${reset_color}"
+	exit 0
 }
 
 # Usage function in case the user didn't type he password
