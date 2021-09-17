@@ -7,7 +7,11 @@ USAGE="Usage: ./password_validator <your_password>"
 # The validator function get the password  and validate:
 # minimum 10 chars, lowercase and uppercase letters.
 function password_validator(){
-	echo "validator function"
+	if [[ ${#1} -ge 10 && "$1" == *[[:lower:]]* && "$1" == *[[:upper:]]* && "$1" == *[0-9]* ]]; then
+		echo "valid_password_respond"
+	else
+		echo "invalid_password_respond"
+	fi
 }
 
 # Usage function in case the user didn't type he password
