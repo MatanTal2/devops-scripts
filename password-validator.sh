@@ -11,9 +11,9 @@ NUMBER_OF_DIGITS=10
 # minimum 10 chars, lowercase and uppercase letters.
 function password_validator(){
 	if [[ ${#1} -ge 10 && "$1" == *[[:lower:]]* && "$1" == *[[:upper:]]* && "$1" == *[0-9]* ]]; then
-		echo "valid_password_respond"
+		valid_password_respond
 	else
-		echo "invalid_password_respond"
+		invalid_password_respond
 	fi
 }
 
@@ -45,6 +45,8 @@ function prompt_usage(){
 	echo "$USAGE"
 	exit 1
 }
+
+# main program
 
 if [ $# == 1 ]; then
 	password=$1
