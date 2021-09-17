@@ -49,7 +49,19 @@ function prompt_usage(){
 
 # main program
 
-if [ $# == 1 ]; then
+# check number of argv and act accordinaly
+if [ $# == 2 ]; then
+	filename=$2
+	if [ -f "$filename" ]; then
+		while read -r line; do
+			file_contant="$line"
+		done < "$filename"
+		password_validator ${file_contant}
+	else
+		echo "File does not exist"
+		exit 1
+	fi
+elif [ $# == 1 ]; then
 	password=$1
 	password_validator ${password}
 else 
