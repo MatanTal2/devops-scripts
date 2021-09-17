@@ -10,6 +10,7 @@ NUMBER_OF_DIGITS=10
 # The validator function get the password  and validate:
 # minimum 10 chars, lowercase and uppercase letters.
 function password_validator(){
+	# security issue: password with - valid 
 	if [[ ${#1} -ge 10 && "$1" == *[[:lower:]]* && "$1" == *[[:upper:]]* && "$1" == *[0-9]* ]]; then
 		valid_password_respond
 	else
