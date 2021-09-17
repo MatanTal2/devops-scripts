@@ -52,5 +52,5 @@ if [ $# == 1 ]; then
 	password=$1
 	password_validator ${password}
 else 
-	echo "prompt_usage"
+	prompt_usage
 fi
