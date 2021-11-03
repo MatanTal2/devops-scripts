@@ -30,11 +30,14 @@ function invalid_password_respond(){
 	# check for number of digits
 	if [[ ${#password} -lt ${NUMBER_OF_DIGITS} ]]; then
 		echo "Must have 10 charactor"
-	elif [[ ${password} != *[[:lower:]]* ]]; then
+	fi
+	if [[ ${password} != *[[:lower:]]* ]]; then
 		echo "Must have lowercase charactor"
-	elif [[ ${password} != *[[:upper:]]* ]]; then
+	fi
+	if [[ ${password} != *[[:upper:]]* ]]; then
 		echo "Must have uppercase charactor"
-	elif [[ ${password} != *[0-9]* ]]; then
+	fi
+	if [[ ${password} != *[0-9]* ]]; then
 		echo "Must have digit"
 	fi
 	exit 1
